@@ -8,6 +8,7 @@ var compression = require('compression')
 
 var indexRouter = require('./routes/index');
 
+var PORT = process.env.PORT || 8000;
 var app = express();
 app.use(compression());
 
@@ -44,6 +45,6 @@ app.use(function(err, req, res, next) {
     res.render('error');
 });
 
-app.listen(8000, function() {
+app.listen(PORT, function() {
     console.log('Example app listening on port 8000!');
 });
