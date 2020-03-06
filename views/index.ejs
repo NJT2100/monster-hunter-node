@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel='stylesheet' type='text/css' href='/stylesheets/main.css'>
+        <script src="https://kit.fontawesome.com/2524b90394.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src='/javascript/main.js'></script>
+        <script src='/javascript/slideshow.js'></script>
+    </head>
+    <body>
+
+        <div id='page'>
+            <div class='topnav'>
+                <span class='simpleNavBar'>
+                    <button class='simpleNav active'>Home</button>
+                    <button class='simpleNav'>About</button>
+                    <button class='simpleNav'>Contact Us</button>
+                </span>
+                <form style='display: inline' id='searchForm' action='/'>
+                    <span class='simpleSearch'>
+                        <input id='searchInput' type='search' name='search' placeholder="Search Monster Hunter Wiki">
+                        <button id='searchButton' type='submit' name='go'><i class="fa fa-search"></i></button>  
+                    </span>
+                </form>
+            </div>
+            <div id='body'>
+                <div class='content'>
+                    <div class='welcome'>
+                        <h1><%= message %></h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam.
+                        </p>
+                    </div>
+                    <div class='slideshow-container'>
+                        <% for (var i = 0; i < featuredImages.length; i++) { %>
+                            <div class="slide fade">
+                                <img class='featured' src="/images/featured/<%= featuredImages[i] %>">
+                            </div>
+                        <% } %>
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+                        <div class='bottom-bar'>
+                            <div class='thumbnail-group'>
+                                <% for (var i = 0; i < featuredImages.length; i++) { %>   
+                                    <div id='thumb<%=i%>' class="thumbnail">
+                                        <img class='featured-thumb' src="/images/featured/<%= featuredImages[i] %>">
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a. Nunc sed velit dignissim sodales ut eu. Vitae aliquet nec ullamcorper sit. Facilisis gravida neque convallis a cras semper. Vitae congue eu consequat ac felis. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Posuere ac ut consequat semper viverra nam libero justo laoreet. Mollis aliquam ut porttitor leo. Est pellentesque elit ullamcorper dignissim cras tincidunt. Venenatis urna cursus eget nunc scelerisque viverra mauris. Vulputate dignissim suspendisse in est ante in nibh mauris. Sapien pellentesque habitant morbi tristique. Magna sit amet purus gravida quis. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Quis vel eros donec ac odio.
+
+                    Nulla facilisi etiam dignissim diam quis. Aliquam eleifend mi in nulla posuere. Placerat in egestas erat imperdiet. Faucibus scelerisque eleifend donec pretium. Aenean et tortor at risus viverra. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Tellus in metus vulputate eu scelerisque. Ac auctor augue mauris augue. Quis lectus nulla at volutpat diam ut. Amet risus nullam eget felis. In cursus turpis massa tincidunt dui ut.
+                    
+                    Lectus proin nibh nisl condimentum id venenatis. At auctor urna nunc id cursus metus aliquam eleifend. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Mattis enim ut tellus elementum sagittis. At consectetur lorem donec massa sapien faucibus et. Arcu ac tortor dignissim convallis aenean et tortor at. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. Semper eget duis at tellus at urna condimentum mattis pellentesque. Mauris nunc congue nisi vitae. Metus aliquam eleifend mi in nulla. Congue quisque egestas diam in arcu cursus.
+                    
+                    Auctor neque vitae tempus quam pellentesque nec nam aliquam. Quam quisque id diam vel quam. Eu feugiat pretium nibh ipsum consequat. Mauris a diam maecenas sed enim ut sem. Pellentesque elit eget gravida cum. Consequat ac felis donec et odio pellentesque. Metus aliquam eleifend mi in nulla posuere sollicitudin. Faucibus purus in massa tempor nec feugiat nisl. Id aliquet risus feugiat in ante metus. Turpis egestas sed tempus urna et pharetra pharetra massa. Sed elementum tempus egestas sed. Quis lectus nulla at volutpat diam ut. Id venenatis a condimentum vitae sapien pellentesque habitant morbi.
+                    
+                    Non nisi est sit amet facilisis magna etiam tempor orci. Fringilla ut morbi tincidunt augue interdum. Lacus laoreet non curabitur gravida. Eget nunc lobortis mattis aliquam faucibus purus in massa. Ut porttitor leo a diam sollicitudin tempor id eu. Diam quis enim lobortis scelerisque. Gravida neque convallis a cras. Turpis in eu mi bibendum neque egestas congue quisque egestas. Amet purus gravida quis blandit turpis cursus. In nulla posuere sollicitudin aliquam ultrices sagittis orci a.
+                    </p>
+
+                    <div id='popular-pages'>
+                        <span class='section-header'>Popular Pages</span>
+                        <div id='popular-pages-btn-group'>
+                            <% for (var i = 0; i < poppages.length; i++) { %>
+                                <button class='popular-pages-btn'><%= poppages[i] %></button>
+                            <% } %>
+                        </div>
+                    </div>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a. Nunc sed velit dignissim sodales ut eu. Vitae aliquet nec ullamcorper sit. Facilisis gravida neque convallis a cras semper. Vitae congue eu consequat ac felis. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Posuere ac ut consequat semper viverra nam libero justo laoreet. Mollis aliquam ut porttitor leo. Est pellentesque elit ullamcorper dignissim cras tincidunt. Venenatis urna cursus eget nunc scelerisque viverra mauris. Vulputate dignissim suspendisse in est ante in nibh mauris. Sapien pellentesque habitant morbi tristique. Magna sit amet purus gravida quis. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Quis vel eros donec ac odio.
+
+                    Nulla facilisi etiam dignissim diam quis. Aliquam eleifend mi in nulla posuere. Placerat in egestas erat imperdiet. Faucibus scelerisque eleifend donec pretium. Aenean et tortor at risus viverra. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Tellus in metus vulputate eu scelerisque. Ac auctor augue mauris augue. Quis lectus nulla at volutpat diam ut. Amet risus nullam eget felis. In cursus turpis massa tincidunt dui ut.
+                    
+                    Lectus proin nibh nisl condimentum id venenatis. At auctor urna nunc id cursus metus aliquam eleifend. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Mattis enim ut tellus elementum sagittis. At consectetur lorem donec massa sapien faucibus et. Arcu ac tortor dignissim convallis aenean et tortor at. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. Semper eget duis at tellus at urna condimentum mattis pellentesque. Mauris nunc congue nisi vitae. Metus aliquam eleifend mi in nulla. Congue quisque egestas diam in arcu cursus.
+                    
+                    Auctor neque vitae tempus quam pellentesque nec nam aliquam. Quam quisque id diam vel quam. Eu feugiat pretium nibh ipsum consequat. Mauris a diam maecenas sed enim ut sem. Pellentesque elit eget gravida cum. Consequat ac felis donec et odio pellentesque. Metus aliquam eleifend mi in nulla posuere sollicitudin. Faucibus purus in massa tempor nec feugiat nisl. Id aliquet risus feugiat in ante metus. Turpis egestas sed tempus urna et pharetra pharetra massa. Sed elementum tempus egestas sed. Quis lectus nulla at volutpat diam ut. Id venenatis a condimentum vitae sapien pellentesque habitant morbi.
+                    
+                    Non nisi est sit amet facilisis magna etiam tempor orci. Fringilla ut morbi tincidunt augue interdum. Lacus laoreet non curabitur gravida. Eget nunc lobortis mattis aliquam faucibus purus in massa. Ut porttitor leo a diam sollicitudin tempor id eu. Diam quis enim lobortis scelerisque. Gravida neque convallis a cras. Turpis in eu mi bibendum neque egestas congue quisque egestas. Amet purus gravida quis blandit turpis cursus. In nulla posuere sollicitudin aliquam ultrices sagittis orci a.
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a. Nunc sed velit dignissim sodales ut eu. Vitae aliquet nec ullamcorper sit. Facilisis gravida neque convallis a cras semper. Vitae congue eu consequat ac felis. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Posuere ac ut consequat semper viverra nam libero justo laoreet. Mollis aliquam ut porttitor leo. Est pellentesque elit ullamcorper dignissim cras tincidunt. Venenatis urna cursus eget nunc scelerisque viverra mauris. Vulputate dignissim suspendisse in est ante in nibh mauris. Sapien pellentesque habitant morbi tristique. Magna sit amet purus gravida quis. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Quis vel eros donec ac odio.
+
+                    Nulla facilisi etiam dignissim diam quis. Aliquam eleifend mi in nulla posuere. Placerat in egestas erat imperdiet. Faucibus scelerisque eleifend donec pretium. Aenean et tortor at risus viverra. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Tellus in metus vulputate eu scelerisque. Ac auctor augue mauris augue. Quis lectus nulla at volutpat diam ut. Amet risus nullam eget felis. In cursus turpis massa tincidunt dui ut.
+                    
+                    Lectus proin nibh nisl condimentum id venenatis. At auctor urna nunc id cursus metus aliquam eleifend. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Mattis enim ut tellus elementum sagittis. At consectetur lorem donec massa sapien faucibus et. Arcu ac tortor dignissim convallis aenean et tortor at. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. Semper eget duis at tellus at urna condimentum mattis pellentesque. Mauris nunc congue nisi vitae. Metus aliquam eleifend mi in nulla. Congue quisque egestas diam in arcu cursus.
+                    
+                    Auctor neque vitae tempus quam pellentesque nec nam aliquam. Quam quisque id diam vel quam. Eu feugiat pretium nibh ipsum consequat. Mauris a diam maecenas sed enim ut sem. Pellentesque elit eget gravida cum. Consequat ac felis donec et odio pellentesque. Metus aliquam eleifend mi in nulla posuere sollicitudin. Faucibus purus in massa tempor nec feugiat nisl. Id aliquet risus feugiat in ante metus. Turpis egestas sed tempus urna et pharetra pharetra massa. Sed elementum tempus egestas sed. Quis lectus nulla at volutpat diam ut. Id venenatis a condimentum vitae sapien pellentesque habitant morbi.
+                    
+                    Non nisi est sit amet facilisis magna etiam tempor orci. Fringilla ut morbi tincidunt augue interdum. Lacus laoreet non curabitur gravida. Eget nunc lobortis mattis aliquam faucibus purus in massa. Ut porttitor leo a diam sollicitudin tempor id eu. Diam quis enim lobortis scelerisque. Gravida neque convallis a cras. Turpis in eu mi bibendum neque egestas congue quisque egestas. Amet purus gravida quis blandit turpis cursus. In nulla posuere sollicitudin aliquam ultrices sagittis orci a.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class='footer'>
+
+        </div>
+        <button id="goToTop" title="Go to top"><i class="fas fa-chevron-circle-up"></i></button> 
+    </body>
+</html>
