@@ -7,6 +7,7 @@ router.get('/', function(req, res) {
         message: 'Welcome to the Monter Hunter Wiki',
         poppages: ['item', 'item', 'item', 'item', 'item', 'item', 'item', 'item', 'item', 'item', 'item', 'item'],
         featuredImages: ['featured_1.png', 'featured_2.jpg', 'featured_3.jpg', 'featured_4.jpg'],
+        gameImages: ['mhw-iceborne.png', 'mhw.png', 'mhxx.png'],
     });
 });
 

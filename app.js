@@ -25,9 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
-// app.get('/favicon.ico', function(req, res) {
-//     res.sendFile(__dirname + '/public/images/favicon.ico');
-// });
+app.get('/favicon.ico', function(req, res) {
+    res.sendFile(__dirname + '/public/images/favicon.ico');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

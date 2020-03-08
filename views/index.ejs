@@ -7,6 +7,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src='/javascript/main.js'></script>
         <script src='/javascript/slideshow.js'></script>
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     </head>
     <body>
 
@@ -26,11 +27,19 @@
             </div>
             <div id='body'>
                 <div class='content'>
-                    <div class='welcome'>
-                        <h1><%= message %></h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam.
-                        </p>
+                    <div style='display: flex;flex-wrap: wrap;'>
+                        <div class='welcome'>
+                            <h1><%= message %></h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam.
+                            </p>
+                        </div>
+                        <div id='statistics'>
+                            <span class='stat'>Number of articles: <span style='font-weight: bold'>0</span></span>
+                            <span class='stat'>Number of files: <span style='font-weight: bold'>0</span></span>
+                            <span class='stat'>Number of active users: <span style='font-weight: bold'>0</span></span>
+                            <span class='stat'>Number of edits: <span style='font-weight: bold'>0</span></span>
+                        </div>
                     </div>
                     <div class='slideshow-container'>
                         <% for (var i = 0; i < featuredImages.length; i++) { %>
@@ -49,6 +58,18 @@
                                 <% } %>
                             </div>
                         </div>
+                    </div>
+                    <div class='latest-tile-row'>
+                        <% for (var i = 0; i < gameImages.length; i++) { %>  
+                            <div class='latest-tile'>   
+                                <div class='tile-top'>
+                                    <img class='game-thumb' src="/images/games/<%= gameImages[i] %>">
+                                </div>
+                                <div class='tile-bottom'>
+                                    
+                                </div>
+                            </div>
+                        <% } %>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris cursus mattis molestie a. Nunc sed velit dignissim sodales ut eu. Vitae aliquet nec ullamcorper sit. Facilisis gravida neque convallis a cras semper. Vitae congue eu consequat ac felis. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Posuere ac ut consequat semper viverra nam libero justo laoreet. Mollis aliquam ut porttitor leo. Est pellentesque elit ullamcorper dignissim cras tincidunt. Venenatis urna cursus eget nunc scelerisque viverra mauris. Vulputate dignissim suspendisse in est ante in nibh mauris. Sapien pellentesque habitant morbi tristique. Magna sit amet purus gravida quis. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Quis vel eros donec ac odio.
 
