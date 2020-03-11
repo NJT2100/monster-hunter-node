@@ -39,7 +39,17 @@ $(document).ready(function(){
                 $(this).fadeIn();
                 $(`${thumbID}${index}`).addClass('selected');
             }
-        })
+        });
+        showCaption(slideIndex);
         timeoutID = setTimeout(showSlides, 7000, slideIndex + 1);
+    }
+
+    function showCaption(n) {
+        $('.caption-header').each(function(index) {
+            $(this).hide();
+            if (index == n) {
+                $(this).fadeIn();
+            }
+        });
     }
 });

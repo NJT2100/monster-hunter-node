@@ -4,15 +4,30 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const createError = require('http-errors');
-var compression = require('compression')
+const compression = require('compression')
+const helmet = require('helmet')
 
 var indexRouter = require('./routes/index');
 
 var PORT = process.env.PORT || 8000;
 var app = express();
-app.use(compression());
 
 global.appRoot = path.resolve(__dirname);
+
+//session cookie
+var expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
+app.use(session( {
+    secret: 'secure',
+    name: 'session',
+    keys: ['key1', 'key2'],
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        secure: true,
+        httpOnly: true,
+        expires: expiryDate
+    }
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -22,6 +37,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(compression());
+app.use(helmet());
 
 app.use('/', indexRouter);
 
