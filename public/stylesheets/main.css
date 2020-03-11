@@ -144,10 +144,11 @@ h1 {
 }
 
 #popular-pages-btn-group {
-    padding: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+    margin: 2%;
+    margin-bottom: 1%;
 }
 
 .popular-pages-btn {
@@ -155,12 +156,9 @@ h1 {
     font-weight: bold;
     color: #F9F3EB;
     border: none;
-    min-width: 30%;
+    min-width: 31.5%;
     padding: 15px;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-bottom: 1.5%;
     cursor: pointer;
 }
 
@@ -169,9 +167,8 @@ h1 {
 }
 
 .section-header {
-    padding: 10px;
-    margin: 15px;
     font-weight: bold;
+    margin: 1.5%;
 }
 
 .slideshow-container { 
@@ -276,6 +273,13 @@ h1 {
     color: #eeeeee;
 }
 
+.image-text {
+    font-family: 'PT Serif','Palatino','Georgia',serif;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #444E5A;
+}
+
 .latest-tile-row {
     display: flex;
     flex-wrap: nowrap;
@@ -294,7 +298,7 @@ h1 {
 .tile-top {
     height: 0;                  /* aspect ratio */
     overflow: hidden;           /* aspect ratio */
-    padding-top: 56.25%;        /* aspect ratio */ 
+    padding-top: 56.25%;        /* aspect ratio 16:9 */ 
     width: 100%;
     position: relative;
     margin: auto;
@@ -302,11 +306,16 @@ h1 {
 
 
 .tile-bottom {
+    overflow: hidden;
     box-sizing: border-box;
     border: solid #C0A885 1px;
     background-color: #F9F3EB;
     width: 100%;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .game-thumb {
@@ -320,5 +329,57 @@ h1 {
 }
 
 .game-thumb:hover {
+    transform: scale(1.05);
+}
+
+.main-content-tile-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 100%;
+}
+
+.main-content-tile {
+    max-height: 100%;
+    width: 15.75%;
+    cursor: pointer;
+}
+
+.main-content-top {
+    height: 0;                  /* aspect ratio */
+    overflow: hidden;           /* aspect ratio */
+    padding-top: 114.3%;        /* aspect ratio  7:8 */ 
+    width: 100%;
+    position: relative;
+    margin: auto;
+    background-color: #000000;
+}
+
+.main-content-bottom {
+    box-sizing: border-box;
+    border: solid #C0A885 1px;
+    background-color: #F9F3EB;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main-content-thumb {
+    object-fit: cover;          /* center image while maintaining aspect ratio, remainder is hidden */
+    position: absolute;         /* aspect ratio */
+    top: 0;                     /* aspect ratio */
+    left: 0;                    /* aspect ratio */
+    width: 100%;
+    height: 100%;
+    transition: transform .4s;  /* Animation */
+    cursor: pointer; 
+}
+
+.main-content-thumb:hover {
     transform: scale(1.05);
 }
